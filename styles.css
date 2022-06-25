@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* typography
+  ====================== */
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 6rem;
+  line-height: 100px;
+}
+
+h2 {
+  color: #000000;
+  font-size: 3rem;
+  
+}
+
+/* title box
+  ====================== */
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+.rainbow p {
+  padding: 0;
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #1877f2;
+}
+
+.rainbow {
+  position: relative;
+  z-index: 0;
+  width: 550px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rainbow::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #1877f2;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1877f2), to(white)), -webkit-gradient(linear, left top, left bottom, from(#1877f2), to(white)), -webkit-gradient(linear, left top, left bottom, from(#1877f2), to(white)), -webkit-gradient(linear, left top, left bottom, from(#1877f2), to(white));
+  background-image: linear-gradient(#1877f2, white), linear-gradient(#1877f2, white), linear-gradient(#1877f2, white), linear-gradient(#1877f2, white);
+  -webkit-animation: rotate 4s linear infinite;
+          animation: rotate 4s linear infinite;
+}
+
+.rainbow::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: #1877f2;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .rainbow {
+    width: 300px;
+    height: 150px;
+  }
+  .rainbow p {
+    padding: 10px;
+    font-size: 3rem;
+  }
+  h1 {
+    padding-top: 80px;
+    font-size: 3rem;
+    line-height: 50px;
+  }
+}
+
+/* buttons
+  ====================== */
+.draw-border {
+  -webkit-box-shadow: inset 0 0 0 4px #f0f2f0;
+          box-shadow: inset 0 0 0 4px #f0f2f0;
+  color: white;
+  -webkit-transition: color 0.25s 0.08333s;
+  transition: color 0.25s 0.08333s;
+  position: relative;
+}
+
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #10468c;
+}
+
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #10468c;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  border-radius: 5px;
+  margin: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.btn:focus {
+  outline: 2px dotted #1877f2;
+}
+
+/* body
+  ====================== */
+.top {
+  overflow: hidden;
+  background-color: #1877f2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+.top :hover{
+    background: #ffffff;
+    color: #1877f2;
+}
+
+.main {
+    margin-top: 30px;
+}
+#GFG_UP {
+  display: none;
+}
+
+#GFG_UP2 {
+  display: none;
+}
+.title{
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1877f2;
+    border-radius: 10px;
+    border:2px solid #1877f2;
+    width: 1400px;
+    border-bottom: 20px solid #1877f2;
+    height: 150px; 
+}
+
+.code {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: #1877f2;
+          box-shadow: #1877f2;
+  border: 2px solid #1877f2;
+  width: 800px;
+  border-bottom: 30px solid #1877f2;
+  height: 180px;
+}
+
+.theme {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 10px rgb(255, 248, 248);
+          box-shadow: 0px 2px 10px rgb(255, 255, 255);
+  border: 2px solid rgb(255, 254, 254);
+  width: 800px;
+  border-bottom: 30px solid #1877f2;
+  height: 600px;
+}
+
+.theme:hover {
+  -webkit-transition: ease-in-out 1s;
+  transition: ease-in-out 1s;
+  -webkit-box-shadow: 0px 2px 10px #1877f2;
+          box-shadow: 0px 2px 10px #1877f2;
+}
+
+.code:hover {
+  -webkit-transition: ease-in-out 1s;
+  transition: ease-in-out 1s;
+  -webkit-box-shadow: 0px 2px 10px #1877f2;
+          box-shadow: 0px 2px 10px #1877f2;
+}
+
+footer {
+  background-color: #1877f2;
+  width: 100%;
+  text-align: right;
+  padding: 10px;
+  bottom: 0px;
+  margin-top: 100px;
+}
+
+.instagram {
+  background-color: #1877f2;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.instagram a {
+  color: white;
+  font-size: 1rem;
+}
+
+/* flexbox
+  ====================== */
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.column {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+  margin-top: 100px;
+}
+
+.row p {
+  font-size: 1.5rem;
+  margin: 50px;
+}
+
+@media (max-width: 1600px) {
+  .theme {
+    width: 500px;
+  }
+  .code {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .column {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .column {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+  .code {
+    width: 350px;
+  }
+  .theme {
+    width: 350px;
+  }
+  .row p {
+    font-size: 1rem;
+    margin: 20px;
+  }
+  .top {
+    font-size: 1rem;
+  }
+}
+
+/* Scroll bar*/
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px white;
+          box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1877f2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1877f2;
+}
+
+/* The Modal  */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+  background-color: rgb(255, 255, 255);
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto auto;
+  padding: 20px;
+  border: 1px solid #1877f2;
+  width: 80%;
+  margin-top: 5%;
+  outline: 20px solid #1877f2;
+  outline-offset: -50px;
+}
+
+.close {
+  color: #f0f2f5;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content p {
+  font-size: 1.5rem;
+  padding: 20px;
+  margin: 50px;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .modal-content {
+    outline: none;
+  }
+  .modal-content p {
+    font-size: 1rem;
+    padding: 20px;
+    margin: 0px;
+  }
+}
